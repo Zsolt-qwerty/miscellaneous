@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        
+        body {
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #2f4f4f;
+            background-color: #f5f5dc;
+        }
+        
+        div {
+            border: 1px solid red;
+        }
+        
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .child {
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+            width: 20%;
+            padding: 20px;
+            /* flex: 1 150px; */
+            /* text-align: center; */
+        }
+
+        .subchild {
+            /* width: 30%; */
+            height: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="parent">
+    <div class="child">
+        one
+    </div>
+    <div class="child">
+        two
+    </div>
+    <div class="child">
+        <div class="subchild">
+            one
+        </div>
+        <div class="subchild">
+            two
+        </div>
+        <div class="subchild">
+            three
+        </div>
+    </div>
+    <div class="child">
+        four
+    </div>
+    <div class="child">
+        five
+    </div>
+</div>
+
+</body>
+
+</html>

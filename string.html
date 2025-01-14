@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Practice</title>
+</head>
+
+<body>
+
+    <button id="inputBtn">input</button>
+    <h5>input | capitalize | lastLetter | char_count</h5>
+    <p>&nbsp;</p>
+    <h5>textbox + keydown</h5>
+    <input id="textBox" type="text">
+    <div   id="output">&nbsp;</div>
+
+    <script>
+
+        const inputBtn = document.querySelector("#inputBtn");
+        const para     = document.querySelector("p");
+        const textBox  = document.querySelector("#textBox");
+        const output   = document.querySelector("#output");
+
+        inputBtn.addEventListener("click", () => {
+            let input = prompt("type input", "wEWwoUiOLu");
+            para.textContent = `${input} | ${capitalize(input)} | ${lastLetter(input)} | ${stringLength(input)}`;
+        });
+        
+        textBox.addEventListener("keydown", (event) => {
+            output.textContent = `You pressed "${event.key}".`;
+        });
+
+
+        function lastLetter(string) {
+            return string[string.length-1];
+        }
+
+        function capitalize(string) {
+            return string[0].toUpperCase() + string.slice(1).toLowerCase();
+        }
+
+        function stringLength(string) {
+            return string.length;
+        }
+
+    </script>
+
+</body>
+</html>

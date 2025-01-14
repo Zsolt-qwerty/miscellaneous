@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+
+<body>
+
+    <h5>textbox + keydown</h5>
+    <input id="textBox" type="text">
+    <div   id="output">&nbsp;</div>
+    <h5>lastLetter + capitalize</h5>
+    <p></p>
+
+    <script>
+
+        const textBox = document.querySelector("#textBox");
+        const output  = document.querySelector("#output");
+
+        textBox.addEventListener("keydown", (event) => {
+            output.textContent = `You pressed "${event.key}".`;
+        });
+
+        const para = document.querySelector("p");
+
+        function lastLetter(string) {
+            return string[string.length-1];
+        }
+
+        function capitalize(string) {
+            return string[0].toUpperCase() + string.slice(1).toLowerCase();
+        }
+
+        input = "wEW6oUiOLu";
+        para.textContent = `${input} | ${capitalize(input)} | ${lastLetter(input)}`;
+
+    </script>
+
+</body>
+</html>

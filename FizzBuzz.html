@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<span>End number: </span>
+<input type="number" value="100"><button>Go</button>
+<span id="range"></span>
+<p>&nbsp;</p>
+
+<script>
+
+const input = document.querySelector("input");
+const btn   = document.querySelector("button");
+const range = document.querySelector("#range");
+// const para   = document.querySelector("p");
+const body  = document.body;
+const panel = document.createElement("div");
+// panel.setAttribute("class", "result");
+
+function endNumber() {
+    return Math.floor(Math.abs(+input.value));
+}
+
+btn.addEventListener("click", () => compute());
+
+function compute() {
+    range.textContent = `| 1 to ${endNumber()} | `;
+    body.appendChild(panel);
+    for (let i = 1; i <= endNumber(); i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            addLine("FizzBuzz");
+        } else if (i % 3 == 0) {
+            addLine("Fizz");
+        } else if (i % 5 == 0) {
+            addLine("Buzz");
+        } else {
+            addLine(i);
+        }    
+    }    
+}    
+
+function addLine(nextLine) {
+    const p = document.createElement("p");
+    p.textContent = nextLine;
+    panel.appendChild(p);
+}    
+
+</script>
+
+</body>
+
+</html>
